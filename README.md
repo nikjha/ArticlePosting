@@ -1,66 +1,52 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Task: Article Posting With Image (CRUD Operations)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Instructions: You need to create an Article Posting web app where users can perform CRUD operations on articles using a Laravel API and Ajax. The candidate should implement the backend API endpoints and use Ajax for frontend interaction.
 
-## About Laravel
+Requirements:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Create APIs for performing CRUD operations on articles.
+- Each article should have at least the following attributes: title, content, image, and published date.
+- You should use Laravel PHP.
+- Implement Ajax calls to interact with the API endpoints without page refresh.
+- Display a list of articles on the homepage with basic information.
+- Use modals for creating and editing articles.
+ - Implement validation for input fields, both on the frontend (Jquery validation: https://jqueryvalidation.org/) and backend.
+- Implement error handling for API requests and responses.
+Steps:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Database Setup:  Create an "articles" table with columns "id", "title", "content", "image_path", "published_at", "created_at", and "updated_at".
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Model and Controller Setup: 
+Create an Article model and an ArticleController to handle CRUD operations.Implement API endpoints for creating, reading, updating, and deleting articles.
 
-## Learning Laravel
+    API Routes: Define API routes in routes/api.php for CRUD operations.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Frontend Setup:  Create the necessary Blade views (HTML templates) for the frontend, including:
+index.blade.php: Display a list of articles with basic information. 
+create.blade.php: Form for creating a new article using a modal. 
+edit.blade.php: Form for editing an existing article using a modal.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+JavaScript and Ajax: Use Ajax to interact with the API endpoints without page refresh. Implement scripts to fetch articles, create articles, update articles, and delete articles. Utilize modals for the create and edit forms.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+Validation:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Implement validation rules on both frontend (using JQuery Validation: https://jqueryvalidation.org) and backend (using Laravel validation). Display appropriate error messages for validation failures.
+Styling:
 
-### Premium Partners
+Apply basic styling to the application to make it user-friendly.
+Testing:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Test the application thoroughly by creating, updating, and deleting articles. Test error scenarios, such as submitting invalid data or handling API errors.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+.env change details for db connection
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+DB_CONNECTION=sqlite
+DB_DATABASE=/home/admin01/investkraft_blog/ArticlePosting/database/database.sqlite
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+to run in local environment:
+php artisan serve
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
